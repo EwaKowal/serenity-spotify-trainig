@@ -2,11 +2,8 @@ package pl.serenity.training.pages;
 
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 @DefaultUrl("")
 public class LoginPage extends PageObject {
@@ -35,15 +32,6 @@ public class LoginPage extends PageObject {
         inputPass.clear();
         inputPass.sendKeys(password);
         buttonLogin.click();
-        waitFor(AFTER_LOGIN_XPATH);
+//        waitFor(AFTER_LOGIN_XPATH);
     }
-
-    private void waitFor(String xpath) {
-        By locator = By.xpath(xpath);
-        new WebDriverWait(getDriver(), 30)
-                .until(ExpectedConditions
-                        .visibilityOfElementLocated(locator)
-                );
-    }
-
 }

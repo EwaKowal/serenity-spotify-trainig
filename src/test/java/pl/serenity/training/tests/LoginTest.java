@@ -3,22 +3,21 @@ package pl.serenity.training.tests;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import pl.serenity.training.steps.LoginSteps;
 
 @RunWith(SerenityRunner.class)
-public class LoginTest {
+public class LoginTest extends BaseTest {
     @Steps
-    LoginSteps loginSteps;
+    private LoginSteps loginSteps;
 
     @Managed
-    WebDriver driver;
+    private WebDriver driver;
 
-    @Test
+    //    @Test
     public void loginAndLogout() {
-        loginSteps.login();
+        loginSteps.login("serenity.test.ek@gmail.com", "RcAZqvHT6AI2lCcK!");
         loginSteps.logout();
     }
 }

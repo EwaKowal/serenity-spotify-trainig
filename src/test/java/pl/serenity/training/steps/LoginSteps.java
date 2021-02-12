@@ -11,11 +11,11 @@ public class LoginSteps extends ScenarioSteps {
     MainPage mainPage;
     HomePage homePage;
 
-    @Step("Login into server")
-    public void login() {
+    @Step("Login into server with email '{0}' and password '{1}'")
+    public void login(String email, String passwod) {
         mainPage.openMainPage();
         mainPage.clickLogin();
-        loginPage.loginThroughFacebook("serenity.test.ek@gmail.com", "RcAZqvHT6AI2lCcK!");
+        loginPage.loginThroughFacebook(email, passwod);
     }
 
     @Step("Logout from server")
