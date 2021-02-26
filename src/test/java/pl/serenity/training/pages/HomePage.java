@@ -9,8 +9,6 @@ import org.openqa.selenium.support.ui.Wait;
 
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.List;
 
 public class HomePage extends PageObject {
 
@@ -24,10 +22,10 @@ public class HomePage extends PageObject {
     @FindBy(xpath = "//button[contains(text(),'Dismiss')]")
     private WebElementFacade buttonDismiss;
 
-    @FindBy(xpath = "(//header//button)[last()]")
+    @FindBy(xpath = "//span[contains(text(),'Profil')]/ancestor::button")
     private WebElementFacade buttonUserMenu;
 
-    @FindBy(xpath = "//a[contains(text(),'Account')]")
+    @FindBy(xpath = "//a[contains(text(),'Konto')]")
     private WebElementFacade linkAccount;
 
     public void logout() {
@@ -63,11 +61,6 @@ public class HomePage extends PageObject {
 
     public void clickLinkAccount() {
         this.linkAccount.click();
-    }
-
-    public void switchTab(int i) {
-        List<String> list = new ArrayList<>(getDriver().getWindowHandles());
-        getDriver().switchTo().window(list.get(i));
     }
 
     private void clickViaJs(String xpath) {

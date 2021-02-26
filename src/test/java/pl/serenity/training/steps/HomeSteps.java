@@ -22,6 +22,5 @@ public class HomeSteps {
     public void openAccountDetails() {
         homePage.clickButtonUserMenu();
         homePage.clickLinkAccount();
-        homePage.switchTab(1);
     }
 }

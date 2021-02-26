@@ -53,7 +53,7 @@ public class PrivacySetupPage extends PageObject {
     }
 
     public enum ToggleColor {
-        GREEN("rgba(29, 185, 84, 1)"),
+        GREEN("rgba(30, 215, 96, 1)"),
         GREY("rgba(217, 218, 220, 1)");
         private final String colorHex;
 
